@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spatial Prioritization Batch</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; max-width: 1200px; }
+    h1 { color: #333; }
+    iframe { border: none; width: 100%; }
+    .map-frame { height: 600px; margin-bottom: 1.5em; }
+    .table-frame { height: 200px; margin-bottom: 1em; }
+    img { width: 1000px; height:auto; display: block; margin: 1.5em auto 0.5em; }
+    .breadcrumbs { font-size: 1.2em; margin-bottom: 1.5em; color: #666; line-height: 1.4; }
+    .breadcrumbs a { color: #0077cc; text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="breadcrumbs">
+<div><a href="../../../../../index.html">Home</a>&nbsp;&gt;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../../index.html">General Management Area Prioritizations</a>&nbsp;&gt;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../index.html">Cascade-Siskiyou Connectivity Area (CA)</a>&nbsp;&gt;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../index.html">Version: NSO refuge</a>&nbsp;&gt;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html">Batch 3: Adjust federal reserve incentive</a>&nbsp;&gt;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./index.html">Sub-batch B: Medium NSO weight</a></div>
+</div>
+<h1>Spatial Prioritization Results</h1>
+
+<h2>📋 Scenario Table</h2>
+<p>This table summarizes the parameter settings for each prioritization scenario evaluated in this batch. Note that fire suitability, distance to road, and distance to trail are provided to prioritizr as penalties, and so positive values mean that we aim to avoid them. Fire refugia and reserve, on the other hand, are input as penalties are interpreted as incentives, and so we use negative values to tell prioritizr that we want solutions containing more of these layers.</p>
+<iframe class="table-frame" src="weights_table.html"></iframe>
+
+<h2>🗺 Interactive Map</h2>
+<p>Use this interactive map to explore the spatial distribution of hexes selected for barred owl removals (management) across scenarios. Fill colors of hexes in the map correspond to the relative importance of each hex, or how high priority it is relative to other hexes selected for removals, where warmer colors indicate higher priority. Hexes considered by prioritizr but not selected for removals are shaded gray. The maximum number of hexes that could be selected for management is 25% of the total hexes in the geographic area under consideration.</p>
+<iframe class="map-frame" src="priority_map.html"></iframe>
+
+<h2>📋 Summary Table</h2>
+<p>This table summarizes mean layer values within selected hexes across scenarios. All variables were scaled to 0-1 to improve prioritizations and aid simple interpretation. In other words, a value of 0 represents the lowest value of a given variable observed in the NWFP region, and a 1 represents the greatest value of a given variable observed in the NWFP region. The intent of this table is to demonstrate general shifts in the coverage of important variables across scenarios.</p>
+<iframe class="table-frame" src="summary_table.html"></iframe>
+
+<h2>📊 Histogram Plot</h2>
+<p>This plot visualizes the frequency distribution of relevant variables (columns of grid) across scenarios (rows of grid). X-axis units are omitted because variables were 0-1 scaled and thus these plots provide qualitative (rather than quantitative) summaries. Frequency distributions were further split into priority bins and colored accordingly, where (eg) red maps the frequency distribution of a given variable within high-priority hexes from a given scenario.</p>
+<img src="priority_histograms.png" alt="Histogram Plot">
+</body>
+</html>
